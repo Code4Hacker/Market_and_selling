@@ -1,0 +1,123 @@
+.cart {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(40px);
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.187);
+}
+
+.cart-container {
+    /* backdrop-filter: blur(10px); */
+    position: absolute;
+    background-color: var(--wt);
+    height: 100vh;
+    width: 300px;
+    transition: .3s ease-in-out;
+    left: 100%;
+    transform: translateX(-100%);
+}
+.from-end{
+    animation: from-end 1s ease-in-out;
+}
+.cart-container .title {
+    text-align: center;
+    border-bottom: 1px solid var(--milk);
+}
+
+.border-top {
+    border-top: 1px solid var(--milk);
+
+}
+
+.bi.text-red {
+    /* padding: 10px; */
+    border-radius: 50px;
+    background-color: var(--dark);
+    height: 30px;
+    width: 30px;
+    left: 50%;
+    color: var(--wt);
+    position: relative;
+    transform: translateX(-50%);
+    padding-top: -10px;
+}
+
+.bi.text-red i {
+    padding: 5px;
+}
+
+.cart-bx {
+    position: relative;
+    display: grid;
+    /* margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px; */
+    margin: 10px;
+    grid-template-columns: 100px auto;
+    height: 100px;
+    gap: 10px;
+    /* background-color: red; */
+}
+
+.cart-img {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.cart-img>* {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    position: relative;
+}
+.incr_bx.mini{
+    width: 70px;
+    background-color: var(--milk2);
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.214);
+    border-radius: 3px;
+}
+.incr_bx > * {
+    padding: 3px;
+    font-size: small;
+    text-align: center;
+    width: 100%;
+}
+
+.incr_bx > *:nth-child(2) {
+    background-color: var(--wt);
+    /* width: 50%; */
+    border-radius: 3px;
+}
+.btn{
+    min-width: 100px;
+}
+.cart .header{
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    margin-top: 6px;
+}
+.cart .small{
+    font-size: 13px;
+    position: relative;
+}
+.cashing{
+    position: fixed;
+    top: 98%;
+    transform: translateY(-98%);
+    width: 100%;
+}
+.mh{
+    /* background-color: red; */
+    height: calc(100% - 20%);
+    overflow: hidden;
+    overflow-y: scroll;
+}

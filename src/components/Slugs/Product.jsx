@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import jQuery from 'jquery';
 import './style.css';
 import Search from '../Search/Search';
@@ -6,8 +6,10 @@ import Poster from '../Cards/Poster';
 import { Link } from 'react-router-dom';
 import Pre_loader from '../Loaders/Pre_loader';
 import m from './../../assets/images/bgone.jpeg'
+import Cart from './carts/Cart';
 
 const Product = () => {
+    const [ hidding, setHidding ] = useState(true);
     const animation = () => {
         let bg = document.querySelector(".banner_.showcase-full");
         window.onscroll = (e) => {
@@ -20,6 +22,7 @@ const Product = () => {
     return (
         <div>
             <Pre_loader />
+            <Cart hidding={hidding} setHidding={setHidding} />
             {/* <Search /> */}
             <div className="banner_ showcase-full" style={{
                 backgroundImage: `url(${m})`,
@@ -89,7 +92,7 @@ const Product = () => {
 
                                     <div className="button">
                                         <button className="btn btn-success p-2 m-1 bi bi-cart-fill"> Add to Cart</button>
-                                        <button className="btn btn-dark p-2  bi bi-coin" style={{marginRight:'-10px'}}>  Buy</button>
+                                        <button className="btn btn-dark p-2  bi bi-coin" style={{marginRight:'-10px'}} onClick={() => setHidding(false)}>  Buy</button>
                                     </div>
                                 </div>
                             </div>

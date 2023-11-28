@@ -76,3 +76,11 @@
         transform: rotate(360deg);
     }
 }
+@keyframes from-end {
+    from{
+        left:150%;
+    }
+    to{
+        left: 100%;
+    }
+}
