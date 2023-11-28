@@ -1,10 +1,18 @@
 @import url(./frames_key.css);
 :root {
     --royal: rgb(0, 102, 255);
+    --grr: rgb(0, 74, 158);
     --bg-gg: rgb(0, 255, 149);
     --dark: rgb(12, 13, 13);
+    --milk2:#EFEFEF;
     --milk:rgb(221, 221, 221);
-    --grr:rgb(60, 186, 64);
+    --r-grr:rgb(60, 112, 186);
+    --hr-grr: #6cbc71;
+    --gr: #5d5d5d;
+    --wt:white;
+}
+*{
+    transition: .4s ease-in-out;
 }
 
 @font-face {
@@ -45,6 +53,12 @@ body {
 .txt-grad {
     color: transparent;
     background: linear-gradient(60deg, var(--bg-gg), var(--royal));
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+.txt-grad2 {
+    color: transparent;
+    background: linear-gradient(110deg, var(--hr-grr), var(--grr));
     background-clip: text;
     -webkit-background-clip: text;
 }
@@ -115,4 +129,64 @@ body {
 }
 .box_notify > *{
     animation: fadeIn 3s linear infinite;
+}
+.primary2{
+    padding: 20px;
+    min-width: 250px;
+    font-size: large;
+    /* background: linear-gradient(120deg, var(--royal), var(--grr)); */
+    background-color: var(--hr-grr);
+    border-radius: 10px;
+    border:none;
+    margin: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: var(--wt);
+    transition: 1s ease-in-out;
+    border: none;
+    /* animation: border-me 4s linear infinite; */
+}
+.lrg{
+    font-size: 60px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, monospace;
+    font-weight: 900;
+}
+.bg-grr{
+    background-color: var(--grr);
+}
+.btn-center{
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+.bg-link{
+    padding: 8px;
+    background-color: var(--r-grr);
+    color: var(--wt);
+    border-radius: 10px;
+    margin: 10px;
+    font-size: small;
+    text-decoration: none;
+}
+.bg-link:hover{
+    padding: 8px;
+    background-color: var(--grr);
+    color: var(--wt);
+    border-radius: 10px;
+    margin: 10px;
+    font-size: small;
+    text-decoration: none;
+}
+.picture-slug{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: var(--milk2);
+}
+.picture-slug * {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }

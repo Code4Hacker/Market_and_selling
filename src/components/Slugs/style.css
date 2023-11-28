@@ -1,0 +1,38 @@
+.banner_.showcase-full{
+    height: 550px;
+    position: relative;
+    background-color: var(--milk2);
+    /* border-radius: 50px; */
+    margin: 00px;
+    padding-top: 10px;
+}
+.banner_.showcase-full .fill-shadow > * {
+    margin-top: 100px !important;
+    /* background-color: red; */
+}
+.banner_.showcase-full .fill-shadow  {
+    border-radius: 0px;
+}
+.incr_bx{
+    width: 150px;
+    background-color: var(--milk2);
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.214);
+    border-radius: 10px;
+}
+.incr_bx > * {
+    padding: 10px;
+    text-align: center;
+    width: 30%;
+}
+
+.incr_bx > *:nth-child(2) {
+    background-color: var(--wt);
+    width: 50%;
+    border-radius: 10px;
+}
+.btn{
+    min-width: 100px;
+}
