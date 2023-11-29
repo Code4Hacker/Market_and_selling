@@ -7,9 +7,12 @@ import { Link } from 'react-router-dom';
 import Pre_loader from '../Loaders/Pre_loader';
 import m from './../../assets/images/bgone.jpeg'
 import Cart from './carts/Cart';
+import Loading from '../Loaders/Loading';
 
 const Product = () => {
-    const [ hidding, setHidding ] = useState(true);
+    const [hidding, setHidding] = useState(true);
+    const [loader, setLoader] = useState(false);
+    const [view, setView] = useState(false);
     const animation = () => {
         let bg = document.querySelector(".banner_.showcase-full");
         window.onscroll = (e) => {
@@ -17,12 +20,23 @@ const Product = () => {
             // console.log(`${window.pageYOffset}px`);
         }
     }
-
     useEffect(() => { animation(); }, []);
+    const handleSubmit = () => {
+        setLoader(true);
+        setTimeout(() => {
+            setHidding(true);
+            setTimeout(() => {
+                setView(false);
+                setTimeout(() => {
+                    setLoader(false);
+                }, 1000);
+            }, 1000);
+        }, 2000);
+    }
     return (
         <div>
             <Pre_loader />
-            <Cart hidding={hidding} setHidding={setHidding} />
+            <Cart hidding={hidding} setHidding={setHidding} setView={setView} view={view} />
             {/* <Search /> */}
             <div className="banner_ showcase-full" style={{
                 backgroundImage: `url(${m})`,
@@ -51,7 +65,7 @@ const Product = () => {
                 <div className="row mt-5 mb-5">
                     <div className="col-md-6 mt-5">
                         <div className="picture-slug">
-                            {/* <img src={m} alt="" /> */}
+                            <img src={m} alt="" />
                         </div>
                     </div>
                     <div className="col-md-6 mt-5">
@@ -67,15 +81,15 @@ const Product = () => {
                                 </span>
                             </div>
 
-                        {/* <div className="container"> */}
+                            {/* <div className="container"> */}
                             <div className="mt-3" style={{
-                                position:'relative',
-                                justifyContent:'end',
-                                alignContent:'end',
-                                display:'flex',
-                                textAlign:'end',
-                                alignItems:'end',
-                                width:'100%'
+                                position: 'relative',
+                                justifyContent: 'end',
+                                alignContent: 'end',
+                                display: 'flex',
+                                textAlign: 'end',
+                                alignItems: 'end',
+                                width: '100%'
                             }}>
                                 <div className="incr_bx">
                                     <div className="">+</div>
@@ -83,20 +97,20 @@ const Product = () => {
                                     <div className="">-</div>
                                 </div>
                             </div>
-                        {/* </div> */}
-                        <div className="container">
-                            <div className="grid">
+                            {/* </div> */}
+                            <div className="container">
+                                <div className="grid">
 
 
-                                <div className="mt-2">
+                                    <div className="mt-2">
 
-                                    <div className="button">
-                                        <button className="btn btn-success p-2 m-1 bi bi-cart-fill"> Add to Cart</button>
-                                        <button className="btn btn-dark p-2  bi bi-coin" style={{marginRight:'-10px'}} onClick={() => setHidding(false)}>  Buy</button>
+                                        <div className="button">
+                                            <button className="btn btn-success p-2 m-1 bi bi-cart-fill"> Add to Cart</button>
+                                            <button className="btn btn-dark p-2  bi bi-coin" style={{ marginRight: '-10px' }} onClick={() => setHidding(false)}>  Buy</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </div>
@@ -116,6 +130,37 @@ const Product = () => {
                     </div>
                 </div>
 
+            </div>
+
+            {/* Modal Location and Contacts */}
+            <div className={`m_location trans-50-50-abs ${!view ? 'animation__animate animate__animated animate__fadeOutUp' : 'animation__animate animate__animated animate__fadeIn'}`}>
+                {
+                    !loader ?
+
+                        <div>
+                            <div className="close" onClick={() => setView(false)}><i className="bi bi-x"></i></div>
+                            <h3 className='text-center m-2 mb-4 mt-4'>Finish  Details</h3>
+                            <div className="inputs">
+                                <input type="text" placeholder='Full Name' style={{ width: '95%' }} />
+                                <div className="flex">
+                                    <input type="address" placeholder='Location' style={{ width: '60%' }} />
+                                    <input type="text" placeholder='Contact' style={{ width: '100%' }} />
+                                </div>
+                                <div className="button mt-4">
+                                    <button className="btn btn-primary p-3" style={{
+                                        borderRadius: '50px'
+                                    }} onClick={handleSubmit}> Done </button>
+                                </div>
+                            </div>
+                        </div>
+                        : <div className="w-100" style={{
+                            left: '50%',
+                            position: 'relative',
+                            transform: 'translateX(-10%)'
+                        }}>
+                            <Loading />
+                        </div>
+                }
             </div>
         </div>
     )

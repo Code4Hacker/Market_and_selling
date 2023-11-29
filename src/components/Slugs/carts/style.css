@@ -76,6 +76,16 @@
     height: 100%;
     position: relative;
 }
+.incr_bx{
+    width: 100px;
+    background-color: var(--milk2);
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.214);
+    /* padding: 10px; */
+    border-radius: 3px;
+}
 .incr_bx.mini{
     width: 70px;
     background-color: var(--milk2);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './style.css'
 import Card from './Card';
 
-const Cart = ({ hidding, setHidding }) => {
+const Cart = ({ hidding, setHidding, setView, view }) => {
     const [ hide, setHide ] = useState();
     const handleHide = () => {
         setHide(true);
@@ -35,7 +35,7 @@ const Cart = ({ hidding, setHidding }) => {
                         <span>TOTAL: </span> <span className="txt-gra">890K</span>
                     </div>
                     <div className="button center text-center mt-2">
-                        <button className="btn btn-success bi bi-coin"> CONTINUE</button>
+                        <button className="btn btn-success bi bi-coin" onClick={ () => setView(true)}> CONTINUE</button>
                     </div>
                 </div>
             </div>

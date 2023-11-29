@@ -55,7 +55,9 @@
 
 .inputs input[type='text'],
 .inputs input[type='email'],
-.inputs input[type='password'] {
+.inputs input[type='password'],
+.inputs input[type='address']
+ {
     padding: 20px;
     width: 450px;
     margin: 10px;
