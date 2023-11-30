@@ -4,8 +4,8 @@ import './style.css';
 import Search from '../Search/Search';
 import Poster from '../Cards/Poster';
 import { Link } from 'react-router-dom';
-import Pre_loader from '../Loaders/Pre_loader';
 import m from './../../assets/images/bgone.jpeg'
+import PreLoader from '../Loaders/PreLoader';
 
 const Dashboard = () => {
   const animation  = () => {
@@ -19,7 +19,7 @@ const Dashboard = () => {
   useEffect(() => { animation(); }, []);
   return (
     <div>
-      <Pre_loader />
+      <PreLoader />
       <Search />
       <div className="banner_ showcase" style={{
         backgroundImage: `url(${m})`,
@@ -37,7 +37,7 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="float-start w-100 container">
+          <div className="float-start container">
             <div className="button animation__animate animate__animated animate__fadeInRight animate__delay-3s animate__slow">
               <button className='primary2 capitalized'>Categories</button>
             </div>

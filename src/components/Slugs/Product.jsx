@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import jQuery from 'jquery';
 import './style.css';
-import Search from '../Search/Search';
 import Poster from '../Cards/Poster';
 import { Link } from 'react-router-dom';
-import Pre_loader from '../Loaders/Pre_loader';
 import m from './../../assets/images/bgone.jpeg'
 import Cart from './carts/Cart';
 import Loading from '../Loaders/Loading';
+import PreLoader from '../Loaders/PreLoader';
 
 const Product = () => {
     const [hidding, setHidding] = useState(true);
@@ -35,7 +33,7 @@ const Product = () => {
     }
     return (
         <div>
-            <Pre_loader />
+            <PreLoader />
             <Cart hidding={hidding} setHidding={setHidding} setView={setView} view={view} />
             {/* <Search /> */}
             <div className="banner_ showcase-full" style={{
@@ -65,7 +63,10 @@ const Product = () => {
                 <div className="row mt-5 mb-5">
                     <div className="col-md-6 mt-5">
                         <div className="picture-slug">
-                            <img src={m} alt="" />
+                            <img src={m} alt="" style={{
+                                objectFit:'cover',
+                                borderRadius:'10px'
+                            }} />
                         </div>
                     </div>
                     <div className="col-md-6 mt-5">

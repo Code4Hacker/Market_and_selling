@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './style.css';
 import jQuery from 'jquery';
 
-const Pre_loader = () => {
+const PreLoader = () => {
     useEffect(() => {
         setTimeout(() => {
             jQuery(".Pre-loader").fadeOut({
@@ -22,4 +22,4 @@ const Pre_loader = () => {
   )
 }
 
-export default Pre_loader
+export default PreLoader

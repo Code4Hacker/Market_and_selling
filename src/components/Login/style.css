@@ -56,8 +56,7 @@
 .inputs input[type='text'],
 .inputs input[type='email'],
 .inputs input[type='password'],
-.inputs input[type='address']
- {
+.inputs input[type='address'] {
     padding: 20px;
     width: 450px;
     margin: 10px;
@@ -123,3 +122,94 @@
 .blur {
     backdrop-filter: blur(10px);
 }
+
+@media screen and (max-width:1100px) {
+    .login {
+        min-height: 400px;
+        width: 80vw;
+        /* padding: 1px !important; */
+        position: absolute;
+        top: 40%;
+        border-radius: 10px;
+        overflow: hidden;
+        /* background: linear-gradient(-50deg, var(--bg-gg), var(--royal)); */
+        left: 50%;
+        transform: translate(-50%, -40%);
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0);
+    }
+    .login > * {
+        background-image: none !important;
+    }
+    .login>*>*>*:nth-child(1) {
+        background: linear-gradient(-50deg, var(--bg-gg), var(--royal));
+        height: 400px;
+        display: none;
+        opacity: 100%;
+        width: 0px;
+        position: relative;
+        /* backdrop-filter: blur(20px); */
+    }
+
+    .login>*>*>*:nth-child(2) {
+        background-color: rgb(255, 255, 255);
+        border-top-left-radius: 80px;
+        border-bottom-left-radius: 80px;
+        overflow: hidden;
+        width: 100%;
+        /* height: 400px; */
+    }
+
+}
+@media screen and (max-width:600px) {
+    .login > * {
+        font-size: small;
+        background-image: none !important;
+    }
+    .login .inputs input[type='text'],
+    .login .inputs input[type='email'],
+    .login .inputs input[type='password'],
+    .login .inputs input[type='address'] {
+        padding: 15px;
+        width: 100%;
+        margin: 10px;
+        outline: none;
+        font-weight: 100;
+        background: none;
+        border-radius: 50px;
+        border: 1px solid var(--grr);
+    }
+
+}
+@media screen and (max-width:340px) {
+
+    .icons {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .icons * {
+        border-radius: 50px;
+        font-size: 14px;
+        padding-bottom: 10px;
+        margin-bottom: 4px;
+        padding: 10px;
+        background-color: var(--milk);
+        height: 30px;
+        transition: .3s ease-in-out;
+        width: 30px;
+        color: var(--dark);
+    }
+    
+    .icons *:hover {
+        border-radius: 50px;
+        font-size: large;
+        padding-bottom: 10px;
+        padding: 10px;
+        z-index: 2;
+        position: relative;
+        background-color: var(--grr);
+        height: 30px;
+        color: var(--milk);
+        width: 30px;
+    }
+}    

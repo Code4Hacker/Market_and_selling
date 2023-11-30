@@ -127,7 +127,9 @@
 }
 .mh{
     /* background-color: red; */
-    height: calc(100% - 20%);
+    height: calc(100% - 25%);
+    /* margin-top: -30px !important; */
+    border-radius: 10px;
     overflow: hidden;
     overflow-y: scroll;
 }
