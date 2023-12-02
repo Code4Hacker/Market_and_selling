@@ -5,7 +5,7 @@
     }
 
     50% {
-        clip-path: circle(35% at 90% 10%);
+        clip-path: circle(300% at 90% 10%);
 
     }
 
